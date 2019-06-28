@@ -7,23 +7,20 @@ module.exports = {
       exec_mode: 'cluster',
       autorestart: true,
       watch: false,
-      max_memory_restart: '1G',
+      max_memory_restart: '500M',
       env_production: {
         NODE_ENV: 'production',
       },
     },
   ],
-  // deploy: {
-  //   production: {
-  //     key: '~/.ssh/id_rsa_fx',
-  //     user: 'ubuntu',
-  //     host: '3.113.9.3',
-  //     ref: 'origin/master',
-  //     repo: 'git@github.com:acro5piano/fx.git',
-  //     path: '/var/app',
-  //     ssh_options: 'StrictHostKeyChecking=no',
-  //     'post-deploy':
-  //       'cp .env.production .env && yarn && env NODE_ENV=production yarn db:migrate && pm2 restart ecosystem.config.js --env production --wait-ready --listen-timeout 1500',
-  //   },
-  // },
+  deploy: {
+    production: {
+      host: 'localhost',
+      ref: 'origin/master',
+      repo: 'git@github.com:acro5piano/pm2-zero-downtime.git',
+      path: `/tmp/${Math.floor(Math.random() * 100)}`,
+      'post-deploy':
+        'yarn && pm2 restart ecosystem.config.js --env production --wait-ready --listen-timeout 1500',
+    },
+  },
 }
