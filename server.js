@@ -5,7 +5,7 @@ app.get('/', (_, res) => {
   res.send('ok')
 })
 
-const port = process.env.PORT
+const port = process.env.PORT || 6000
 
 app.listen(port, () => {
   console.log(port)
