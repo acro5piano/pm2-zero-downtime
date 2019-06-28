@@ -1,0 +1,19 @@
+{
+  "name": "pm2-zero-downtime",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:acro5piano/pm2-zero-downtime",
+  "author": "gosho-kazuya <ketsume0211@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js",
+    "deploy": "pm2 reload server.js"
+  },
+  "devDependencies": {
+    "pm2": "^3.5.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "got": "^9.6.0"
+  }
+}
