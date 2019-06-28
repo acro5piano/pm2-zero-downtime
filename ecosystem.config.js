@@ -18,7 +18,7 @@ module.exports = {
       host: 'localhost',
       ref: 'origin/master',
       repo: 'git@github.com:acro5piano/pm2-zero-downtime.git',
-      path: `/tmp/${Math.floor(Math.random() * 100)}`,
+      path: `/tmp/deploy-test/app`,
       'post-deploy':
         'yarn && pm2 restart ecosystem.config.js --env production --wait-ready --listen-timeout 1500',
     },
