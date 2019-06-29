@@ -3,7 +3,7 @@ module.exports = {
     {
       name: 'foo',
       script: 'npm start',
-      instances: 1,
+      instances: 3,
       exec_mode: 'cluster',
       autorestart: true,
       watch: false,
@@ -17,10 +17,10 @@ module.exports = {
     production: {
       host: 'localhost',
       ref: 'origin/master',
-      repo: '/Users/kazuya/ghq/github.com/acro5piano/pm2-zero-downtime/.git',
+      repo: 'git@github.com:acro5piano/pm2-zero-downtime.git',
       path: `/tmp/deploy-test/app`,
       'post-deploy':
-        'yarn && pm2 restart ecosystem.config.js --env production --wait-ready --listen-timeout 1500',
+        'yarn && pm2 restart ecosystem.config.js --env production --wait-ready --listen-timeout 15000',
     },
   },
 }
